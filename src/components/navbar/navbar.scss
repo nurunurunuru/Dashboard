@@ -8,7 +8,7 @@
 
   .wrapper {
     width: 100%;
-    padding: 20px;
+    padding: 10px 20px; // Reduced padding for smaller screens
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,15 +18,26 @@
       align-items: center;
       border: 0.5px solid lightgray;
       padding: 3px;
+      flex: 1; // Allows it to adjust dynamically
+      max-width: 200px;
 
       input {
         border: none;
         outline: none;
         background: transparent;
+        width: 100%; // Ensures input expands properly
 
         &::placeholder {
           font-size: 12px;
         }
+      }
+
+      @media (max-width: 768px) {
+        max-width: 150px; // Reducing width on smaller screens
+      }
+
+      @media (max-width: 480px) {
+        display: none; // Hides search on very small screens
       }
     }
 
@@ -64,6 +75,37 @@
           position: absolute;
           top: -5px;
           right: -5px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .wrapper {
+      padding: 10px;
+
+      .items {
+        .item {
+          margin-right: 10px; // Reduce spacing for compact layout
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .wrapper {
+      .items {
+        .item {
+          margin-right: 5px; // Further reduce spacing
+        }
+
+        .icon {
+          font-size: 16px; // Smaller icons for mobile
+        }
+
+        .avatar {
+          width: 25px;
+          height: 25px; // Reduce avatar size
         }
       }
     }

@@ -62,10 +62,12 @@ const Sidebar = () => {
                 <span>Notifications</span>
             </li>
             <p className="title">SERVICE</p>
+            <Link to="/Login" style={{ textDecoration: "none" }}>
             <li>
                 <PsychologyOutlinedIcon className="icon"/>
-                <span>Logs</span>
+                <span>Login</span>
             </li>
+            </Link>
             <li>
                 <FavoriteTwoToneIcon className="icon"/>
                 <span>System Health</span>

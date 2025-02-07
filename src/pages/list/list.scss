@@ -1,7 +1,22 @@
 .list {
   display: flex;
   width: 100%;
+  
   .listContainer {
     flex: 6;
+    padding: 20px;
+
+    @media (max-width: 1024px) {
+      padding: 15px;
+    }
+
+    @media (max-width: 768px) {
+      flex: 1; // Adjust flex to take full width on small screens
+      padding: 10px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 5px;
+    }
   }
 }

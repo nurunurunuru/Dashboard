@@ -1,18 +1,31 @@
 .home {
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 
   .homeContainer {
     flex: 6;
+    width: 100%;
 
     .widgets,
     .charts {
       display: flex;
+      flex-wrap: wrap;
       padding: 20px;
       gap: 20px;
+      justify-content: center;
     }
 
     .charts {
       padding: 5px 20px;
+      flex-direction: column;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
     }
 
     .listContainer {
@@ -20,11 +33,13 @@
       box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
       padding: 20px;
       margin: 20px;
+      overflow-x: auto;
 
       .listTitle {
         font-weight: 500;
         color: gray;
         margin-bottom: 15px;
+        text-align: center;
       }
     }
   }

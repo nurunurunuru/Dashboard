@@ -7,16 +7,28 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 
-const Navbar = () => {
+const Navbar = ({ onSearch = () => {} }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearchTerm(e.target.value);
+    onSearch(e.target.value); // This will always be a function now
+  };
+
   const { dispatch } = useContext(DarkModeContext);
   return (
     <div className='navbar'>
       <div className="wrapper">
         <div className='search'>
-          <input type="text" placeholder='Search...'/>
+        <input
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={handleSearchChange}
+          />
           <SearchOutlinedIcon/>
         </div>
         <div className="items">

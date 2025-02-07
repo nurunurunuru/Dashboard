@@ -10,7 +10,7 @@ import Table from "../../components/table/Table";
 
 const Home = () => {
   return (
-    <div className='home'>
+    <div className='home '>
        <Sidebar/>
        <div className='homeContainer'>
         <Navbar/>
